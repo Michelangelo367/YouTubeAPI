@@ -20,7 +20,9 @@ def searchView(request):
     result = []
     # if request is POST
     if request.method == 'POST' and request.is_ajax():
-        keyword = request.POST.get('keyword')
+        # for post we need to use request.body instead of request.POST.get('')
+        keyword = json.loads(request.body)['keyword']
+        print(keyword)
         # execute search based on keyword
         res = youtube.search().list(part='snippet',
                             q=keyword,
@@ -38,7 +40,7 @@ def searchView(request):
 
     # if request is GET
     elif request.method == 'GET' and request.is_ajax():
-
+        print('GET keyword: ' + str(request.GET['keyword']))
         # get more videos in next page
         obj = get_keyword_videos(request.GET['keyword'],request.GET['nextPageToken'])
         # append dictionary into array

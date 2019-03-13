@@ -13,11 +13,13 @@
     // invoked when search button get clicked.
     $("#search").click(function(){
       event.preventDefault();
+      // remove all the childNode when search button clicked
+      document.getElementById('sub-container').innerHTML = '';
       $.ajax({
         type: 'POST',
         url: '/search/',
         contentType:'application/json',
-        data: { 'keyword': $('#keyword').val() },
+        data: JSON.stringify({'keyword': $('#keyword').val()}),
         success: function(data) {
           nextPageToken = data['nextPageToken']
           appendVideos(data)
@@ -27,6 +29,7 @@
           console.log("error: " + error);
         }
       });
+      return false
     });
 
     // when user scrolls to bottom, load more videos
@@ -64,13 +67,17 @@
   }
 
   function appendVideos(data){
+
     var i;
     var element;
     for (i = 0; i < data['result'].length; i++){
       element = data['result'][i]
-      // create a row div
-      row = document.createElement('div')
-      row.className = 'row'
+
+      if(i % 4 == 0){
+        // create a row div
+        row = document.createElement('div')
+        row.className = 'row'
+      }
 
       // create each div for a video
       eachVideoDiv = document.createElement('div')
@@ -106,7 +113,7 @@
         document.getElementById('sub-container').appendChild(row);
       }
     }
-    
+
     // edge case
     if(row.length != 0){
       document.getElementById('sub-container').appendChild(row);
