@@ -1,3 +1,19 @@
+# ignore all txt files
 *.txt
-*.lock
-Pipfile
+*.out
+*.sqlite3
+# ignore files in the youtubeAPIApp folder
+youtubeAPIApp/__pycache__
+youtubeAPIApp/migrations
+youtubeAPIApp/__init__.py
+youtubeAPIApp/admin.py
+youtubeAPIApp/apps.py
+youtubeAPIApp/models.py
+youtubeAPIApp/tests.py
+# ignore files in the youtubeAPIProject folder
+youtubeAPIProject/__pycache__
+youtubeAPIProject/__init__.py
+youtubeAPIProject/wsgi.py
+# ignore files in current folder
+/Pipfile
+/Pipfile.lock
