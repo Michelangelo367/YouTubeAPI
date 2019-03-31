@@ -241,6 +241,7 @@
       iframe = document.createElement('iframe')
       iframe.className = 'frame'
       iframe.src = 'https://www.youtube.com/embed/'+element['videoId']
+      iframe.setAttribute('allowFullScreen', '')
 
       // append every element into video div
       eachVideoDiv.appendChild(title)
