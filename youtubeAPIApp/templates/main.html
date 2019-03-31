@@ -35,7 +35,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Sekyun Oh</a>
+      <a class="navbar-brand" href="http://sekyunoh.info" target="_blank">Sekyun Oh</a>
     </div>
   </nav>
 
@@ -45,13 +45,31 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">A bot searches all YouTube videos based on your keyword!</h1>
+          <h1 id='description' class="mb-5">A bot searches all YouTube videos based on your keyword!</h1>
+          <div class="radio">
+            <div>
+              <input id='radioKeyword' type="radio" name="search" value="keyword" checked/> Keyword Search
+            </div>
+            <div>
+              <input id='radioChannel' type="radio" name="search" value="channel" /> Channel Search
+            </div>
+          </div>
+          <div id='date' class="period">
+            <div>
+              From:
+              <input id='from' type="date" name="period" min="2005-02-01" value='2005-02-01'>
+            </div>
+            <div>
+              To:
+              <input id='to' type="date" name="period" max="2019-12-31">
+            </div>
+          </div>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input id="keyword" type="text" class="form-control form-control-lg" placeholder="Enter your keyword.">
+              <div id='inputForm' class="col-12 col-md-9 mb-2 mb-md-0">
+                <input id="keyword" type="text" class="form-control form-control-lg" placeholder="Enter your keyword." minlength='1'>
               </div>
               <div class="col-12 col-md-3">
                 <button id="search" type="submit" class="btn btn-block btn-lg btn-primary">Search!</button>
@@ -72,7 +90,7 @@
 
     </div>
   </div>
-  
+
   <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
@@ -80,37 +98,29 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="#">About</a>
+              <a href="http://sekyunoh.info/about" target="_blank">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#">Contact</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
-            <li class="list-inline-item">
-              <a href="#">Privacy Policy</a>
+              <a href="http://sekyunoh.info/contact" target="_blank">Contact</a>
             </li>
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Sekyun Oh 2019. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
             <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              <a href="https://github.com/dhtprbs12" target="_blank">
+                <i class="fab fa-github fa-2x fa-fw"></i>
               </a>
             </li>
             <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              <a href="https://www.linkedin.com/in/sekyun-oh-b1a7bb172/" target="_blank">
+                <i class="fab fa-linkedin fa-2x fa-fw"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.instagram.com/sekyunoh/" target="_blank">
                 <i class="fab fa-instagram fa-2x fa-fw"></i>
               </a>
             </li>

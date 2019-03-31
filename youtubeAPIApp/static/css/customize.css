@@ -22,3 +22,17 @@
 	width: 330px;
 	height: 250px;
 }
+
+.radio{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 30px;
+}
+
+.period{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 30px;
+}
